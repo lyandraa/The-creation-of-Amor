@@ -2,45 +2,103 @@
 <html>
 <style>
 #myProgress {
-  width: 55%;
+  width: 40%;
   background-color: #ddd;
   margin:auto
 }
 
 #myBar {
-  width: 1%;
+  width: 0%;
   height: 30px;
-  background-color: #FF0000;
+  background-color: #000000;
   
 }
-.auto-style1 {
-	text-align: center;
+.fa {
+  font-size: 50px;
+  cursor: pointer;
+  user-select: none;
 }
-</style>
-<body>
 
+.fa:hover {
+  color: darkblue;
+  
+}
+
+/* GLOBAL STYLES */
+body {
+  background: #FFFFFF;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}
+.wrapper {
+display: flex;
+align-items: center;
+justify-content: center;
+font-family: monospace;
+
+}
+/* DEMO-SPECIFIC STYLES */
+.typewriter h1 {
+  width: 30ch;
+  color: #000000;
+  font-family:"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid black; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+
+  animation: 
+    typing 2.5s steps(40, end),
+    blink-caret .8s step-end infinite;       
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: black }
+  
+}
+
+</style>
+
+<body onload="move()">
 
 <table style="width: 100%">
 	<tr>
-		<td class="auto-style1"><h1>How much I love you</h1>
+		<td>
+		<div class="wrapper"><div class="typewriter">
+  <h1>Loading how much I love you...</h1>
+</div></div>
+
+
+<div class="loader"></div><br>
+
 
 <div id="myProgress">
   <div id="myBar"></div>
 </div>
 
-<br>
-<button onclick="move()">Click Me</button> 
-
 <script>
+var delayInMilliseconds = 0;
 var i = 0;
-function move() {
+setTimeout(function move() {
+
+{
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
-    var width = 1;
-    var id = setInterval(frame, 10);
+    var width = 0.1;
+    var id = setInterval(frame,30);
     function frame() {
-      if (width >= 600) {
+      if (width >= 200) {
         clearInterval(id);
         i = 0;
       } else {
@@ -50,8 +108,10 @@ function move() {
     }
   }
 }
-</script>
-&nbsp;</td>
+
+  }, delayInMilliseconds);
+
+</script>&nbsp;</td>
 	</tr>
 </table>
 
