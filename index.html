@@ -2,9 +2,9 @@
 <html>
 <style>
 #myProgress {
-  width: 109%;
+  width: 25%;
   background-color: rgb(51, 51, 51);
-  margin:auto
+  margin:20px
 }
 
 #myBar {
@@ -16,10 +16,8 @@
 
 body {
   background: #000000;
-  padding-top: 5em;
-  display: flex;
-  justify-content: center;
 }
+
 .wrapper {
 display: flex;
 align-items: center;
@@ -27,21 +25,28 @@ justify-content: center;
 
 }
 
-.typewriter h1 {
-  width: 100%;
-  color: #FFFFFF;
-  font-family:"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  overflow: hidden; 
-  border-right: .15em solid black; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: typing 3s steps(40, end), blink-caret .8s step-end infinite;       
+.wrapperheader {
+display: flex;
+align-items: left;
+justify-content: left;
+margin: 20px;
 }
 
 
+.typewriter h1 {
+  width: 100%; 
+  color: #FFFFFF;
+  font-family: 'IBM Plex Mono', monospace;
+  overflow: hidden; 
+  border-right: .15em solid black; 
+  white-space:nowrap; 
+  font-size: 20px;
+  margin: 0; 
+  animation: typing 2.4s steps(40, end), blink-caret 1s step-end infinite;
+ }
+
 @keyframes typing {
-  from { width: 0 }
+  from { width: 0px}
   to { width: 100% }
 }
 
@@ -53,14 +58,112 @@ justify-content: center;
 }
 
 .center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+	margin:0px;
+	width: 100%;
+	text-align:justify;
+	top: 50%;
+	position: absolute;
+	-ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
+
+.btn {
+  border: 2px solid white;
+  background-color: black;
+  color: black;
+  padding: 14px 60px;
+  font-size: 20px;
+  cursor: pointer;
+  font-family: 'IBM Plex Mono', monospace;
+  margin:20px;
+ }
+
+
+
+.success {
+  border-color: #FFFFFF;
+  color: white;
+}
+
+.success:hover {
+  Border: 2px solid lightgrey;
+}
+
+
+h1{
+	color: white;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 26px;
+}
+
+h2{
+	color: white;
+	font-family: 'IBM Plex Mono', monospace;
+	font-size: 20px;
+	margin:20px
+}
+
+form {
+        background-color: #FFFFFF;
+        width: 100%;
+        height: 30px;
+        display:flex;
+        flex-direction:row;
+        align-items:left;
+        color: white;
+        text-align:left
+      }
+
+      input {
+        all: unset;
+        font: 20px system-ui;
+		font-family: 'IBM Plex Mono', monospace;
+        color: #000000;
+        height: 100%;
+        width: 100%;
+        padding: 6px 10px;
+        text-align:left
+      }
+
+      ::placeholder {
+        color: #000000;
+        opacity: 0.7; 
+		font-family: 'IBM Plex Mono', monospace;
+      }
+
+      svg {
+        color: #000000;
+        fill: currentColor;
+        width: 24px;
+        height: 24px;
+        padding: 10px;
+      }
+
+      button2 {
+        all: unset;
+        cursor: pointer;
+        width: 44px;
+        height: 44px;
+      }
+      
+.header {
+  background-color: #000000;
+  padding: 20px 10px;
+}
+
+.header a.logo {
+    height: 100%;
+}
+
+  .header-right {
+    color:white;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 </style>
 
 <title>I love you</title>
@@ -68,29 +171,44 @@ justify-content: center;
 
 <body onload="move()">
 
-		<div class="center"><div class="wrapper"><div class="typewriter">
+<div class="header">
+  <a href="#default" class="logo"></a>
+        <div class="wrapperheader"><div class="typewriter">
   <h1>Loading how much I love you...</h1>
-</div>
-</div><br><br>
-<div id="myProgress">
-  <div id="myBar"></div>
-</div></div>
+  </div></div>
 
+
+
+
+<div class="center">
+  <!--<div id="myProgress">
+   <div id="myBar">
+	<form  id="form">
+		<input  placeholder="Coming soon..." >
+		<button2>
+		  <svg viewBox="0 0 1024 1024"><path class="path1" d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471 128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091 218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364 0-218.455 97.091-218.455 218.455z"></path></svg>
+		</button2>
+	  </form>  
+   </div>
+  </div>
+--> <div class="wrapper"><a href="lyandraform.html"><button class="btn success">Lyandra</button></a><a href="michaelform.html"><h2><button class="btn success">Michael</button></h2></a>
+ </div>
+</div>
 
 
 <script>
-var delayInMilliseconds = 0;
-var i = 0;
-setTimeout(function move() {
 
-{
+var i = 0;
+
+function move() {
+
   if (i == 0) {
     i = 1;
     var elem = document.getElementById("myBar");
-    var width = 0.1;
-    var id = setInterval(frame,30);
+    var width = 10;
+    var id = setInterval(frame,25);
     function frame() {
-      if (width >= 200) {
+      if (width >= 100) {
         clearInterval(id);
         i = 0;
       } else {
@@ -100,8 +218,6 @@ setTimeout(function move() {
     }
   }
 }
-
-  }, delayInMilliseconds);
 
 </script>
 
